@@ -9,10 +9,14 @@ if (development) {
 }
 
 const baseUrl = process.env.BASE_URL || undefined
+const deployEnv = process.env.DEPLOY_ENV || undefined
 const matomoUrl = process.env.MATOMO_URL || undefined
 const matomoSiteId = process.env.MATOMO_SITE_ID || undefined
 const googleAnalyticsId = process.env.GOOGLE_ANALYTICS_ID || undefined
 const sentryDsn = process.env.SENTRY_DSN || undefined
+
+const ghpDeploy = deployEnv === 'GH_PAGES'
+
 const sitemapPath = '/sitemap.xml'
 const sitemapUrl = `${baseUrl}${sitemapPath}`
 
@@ -35,6 +39,14 @@ export default {
     'vue-cookie-accept-decline/dist/vue-cookie-accept-decline.css',
     '~/assets/scss/main.scss'
   ],
+
+  router: {
+    ...(ghpDeploy && production
+      ? {
+          base: `/${pkg.name}/`
+        }
+      : {})
+  },
 
   plugins: [],
 

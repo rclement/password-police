@@ -1,0 +1,21 @@
+// brand colors
+$brand-blue: #3890AB;
+$brand-dark: #464846;
+
+// bulma initial variables
+$blue: $brand-blue;
+$cyan: $brand-blue;
+$grey-darker: $brand-dark;
+$family-sans-serif: "Quicksand", "Source Sans Pro", BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+
+// bulma derived variables
+$custom-colors: (
+  "brand-blue": ($brand-blue, findColorInvert($brand-blue)),
+  "brand-dark": ($brand-dark, findColorInvert($brand-dark))
+);
+
+// bulma component variables
+$footer-padding: 3rem 1.5rem 3rem;
+
+@import "~bulma/bulma.sass";
+@import "~buefy/src/scss/buefy";

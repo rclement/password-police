@@ -15,7 +15,7 @@
           <div class="column is-3">
             <figure class="image is-32x32">
               <img
-                :src="props.row.img"
+                :src="`${staticPrefix}${props.row.img}`"
                 class="is-rounded is-bordered"
                 title="Logo"
               >
@@ -116,6 +116,12 @@ export default {
       default() {
         return []
       }
+    }
+  },
+
+  data() {
+    return {
+      staticPrefix: `${process.env.STATIC_PREFIX}`
     }
   }
 }

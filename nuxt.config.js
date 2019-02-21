@@ -16,12 +16,17 @@ const googleAnalyticsId = process.env.GOOGLE_ANALYTICS_ID || undefined
 const sentryDsn = process.env.SENTRY_DSN || undefined
 
 const ghpDeploy = deployEnv === 'GH_PAGES'
+const staticPrefix = ghpDeploy && production ? `/${pkg.name}` : ''
 
 const sitemapPath = '/sitemap.xml'
 const sitemapUrl = `${baseUrl}${sitemapPath}`
 
 export default {
   mode: 'universal',
+
+  env: {
+    STATIC_PREFIX: staticPrefix
+  },
 
   head: {
     title: pkg.name,
@@ -41,11 +46,7 @@ export default {
   ],
 
   router: {
-    ...(ghpDeploy && production
-      ? {
-          base: `/${pkg.name}/`
-        }
-      : {})
+    base: `${staticPrefix}/`
   },
 
   plugins: [],

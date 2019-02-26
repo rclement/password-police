@@ -8,6 +8,9 @@ if (development) {
   require('dotenv').config()
 }
 
+const appName = pkg.name
+const appVersion = pkg.version
+
 const baseUrl = process.env.BASE_URL || undefined
 const deployEnv = process.env.DEPLOY_ENV || undefined
 const matomoUrl = process.env.MATOMO_URL || undefined
@@ -16,7 +19,7 @@ const googleAnalyticsId = process.env.GOOGLE_ANALYTICS_ID || undefined
 const sentryDsn = process.env.SENTRY_DSN || undefined
 
 const ghpDeploy = deployEnv === 'GH_PAGES'
-const staticPrefix = ghpDeploy && production ? `/${pkg.name}` : ''
+const staticPrefix = ghpDeploy && production ? `/${appName}` : ''
 
 const sitemapPath = '/sitemap.xml'
 const sitemapUrl = `${baseUrl}${sitemapPath}`
@@ -29,7 +32,7 @@ export default {
   },
 
   head: {
-    title: pkg.name,
+    title: appName,
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -72,42 +75,8 @@ export default {
           ]
         ]
       : []),
-    ...(googleAnalyticsId
-      ? [
-          [
-            '@nuxtjs/google-analytics',
-            {
-              id: googleAnalyticsId,
-              debug: {
-                enabled: development,
-                sendHitTask: production
-              }
-            }
-          ]
-        ]
-      : []),
-    ...(sentryDsn
-      ? [
-          [
-            '@nuxtjs/sentry',
-            {
-              dsn: sentryDsn,
-              disabled: development,
-              disableClientSide: development,
-              config: {
-                environment: environment,
-                release: pkg.version,
-                beforeSend: function(event) {
-                  if (event.exception) {
-                    Sentry.showReportDialog()
-                  }
-                  return event
-                }
-              }
-            }
-          ]
-        ]
-      : [])
+    ...(googleAnalyticsId ? ['@nuxtjs/google-analytics'] : []),
+    ...(sentryDsn ? ['@nuxtjs/sentry'] : [])
   ],
 
   webfontloader: {
@@ -128,7 +97,7 @@ export default {
   },
 
   meta: {
-    ogSiteName: pkg.name,
+    ogSiteName: appName,
     ogHost: baseUrl
   },
 
@@ -160,10 +129,41 @@ export default {
     {
       UserAgent: '*',
       Allow: '/',
-      Disallow: '/admin',
       Sitemap: sitemapUrl
     }
   ],
+
+  ...(googleAnalyticsId
+    ? {
+        googleAnalytics: {
+          id: googleAnalyticsId,
+          debug: {
+            enabled: development,
+            sendHitTask: production
+          }
+        }
+      }
+    : {}),
+
+  ...(sentryDsn
+    ? {
+        sentry: {
+          dsn: sentryDsn,
+          disabled: development,
+          disableClientSide: development,
+          config: {
+            environment: environment,
+            release: appVersion,
+            beforeSend: function(event) {
+              if (event.exception) {
+                Sentry.showReportDialog()
+              }
+              return event
+            }
+          }
+        }
+      }
+    : {}),
 
   build: {
     extend(config, ctx) {

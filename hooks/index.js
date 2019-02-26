@@ -8,14 +8,19 @@ let server = null
 
 export default nuxtConfig => ({
   build: {
-    done(nuxt, generateOptions) {
-      server = app.listen(nuxtConfig.default.server.port)
+    done(nuxt) {
+      const staticBuild = nuxt.bundleBuilder.context.isStatic
+      if (staticBuild) {
+        server = app.listen(nuxtConfig.default.server.port)
+      }
     }
   },
 
   generate: {
     done(nuxt) {
-      server.close()
+      if (server) {
+        server.close()
+      }
     }
   }
 })

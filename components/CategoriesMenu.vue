@@ -10,7 +10,7 @@
         :key="key"
       >
         <a
-          :class="{ 'is-active': value === key }"
+          :class="{ 'is-active': selectedCategory === key }"
           @click="selectCategory(key)"
         >
           {{ category.name }}
@@ -36,14 +36,20 @@ export default {
     }
   },
 
+  data() {
+    return {
+      selectedCategory: this.value
+    }
+  },
+
   methods: {
     selectCategory(category) {
-      if (this.value === category) {
-        this.value = ''
+      if (this.selectedCategory === category) {
+        this.selectedCategory = ''
       } else {
-        this.value = category
+        this.selectedCategory = category
       }
-      this.$emit('input', this.value)
+      this.$emit('input', this.selectedCategory)
     }
   }
 }

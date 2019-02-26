@@ -1,7 +1,7 @@
 <template>
   <aside class="menu">
     <p class="menu-label">
-      Categories
+      {{ $t('categories.title') }}
     </p>
 
     <ul class="menu-list">

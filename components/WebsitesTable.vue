@@ -6,7 +6,7 @@
   >
     <template v-slot="props">
       <b-table-column
-        label="Website"
+        :label="$t('policies.website')"
         :centered="true"
         field="name"
         sortable
@@ -46,7 +46,7 @@
 
       <b-table-column
         :centered="true"
-        label="Minimum Length"
+        :label="$t('policies.minlength')"
         field="policies.minlength"
         sortable
       >
@@ -55,7 +55,7 @@
 
       <b-table-column
         :centered="true"
-        label="Maximum Length"
+        :label="$t('policies.maxlength')"
         field="policies.maxlength"
         sortable
       >
@@ -64,35 +64,35 @@
 
       <b-table-column
         :centered="true"
-        label="Uppercase [A-Z]"
+        :label="$t('policies.uppercase')"
       >
         <policy-checker :check="props.row.policies.uppercase" />
       </b-table-column>
 
       <b-table-column
         :centered="true"
-        label="Lowercase [a-z]"
+        :label="$t('policies.lowercase')"
       >
         <policy-checker :check="props.row.policies.lowercase" />
       </b-table-column>
 
       <b-table-column
         :centered="true"
-        label="Numbers [0-9]"
+        :label="$t('policies.numbers')"
       >
         <policy-checker :check="props.row.policies.numbers" />
       </b-table-column>
 
       <b-table-column
         :centered="true"
-        label="Symbols [!@#$%^&*]"
+        :label="$t('policies.symbols')"
       >
         <policy-checker :check="props.row.policies.symbols" />
       </b-table-column>
 
       <b-table-column
         :centered="true"
-        label="Score [1-5]"
+        :label="$t('policies.score')"
         field="score"
         sortable
       >

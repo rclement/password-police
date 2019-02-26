@@ -3,11 +3,11 @@
     <section class="section">
       <div class="container has-text-centered">
         <p class="title">
-          Password Police
+          {{ $t('home.title') }}
         </p>
 
         <p class="subtitle">
-          Password policies list for online services
+          {{ $t('home.subtitle') }}
         </p>
       </div>
     </section>

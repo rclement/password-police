@@ -1,4 +1,24 @@
 export default {
+  home: {
+    title: 'Password Police',
+    subtitle: 'Password policies list for online services'
+  },
+
+  categories: {
+    title: 'Categories'
+  },
+
+  policies: {
+    website: 'Website',
+    minlength: 'Minimum Length',
+    maxlength: 'Maximum Length',
+    uppercase: 'Uppercase [A-Z]',
+    lowercase: 'Lowercase [a-z]',
+    numbers: 'Numbers [0-9]',
+    symbols: 'Symbols [!@#$%^&*]',
+    score: 'Score [1-5]'
+  },
+
   credits: {
     copyright: {
       text: 'Copyright',
@@ -10,6 +30,7 @@ export default {
       update: 'Update cookies policy'
     }
   },
+
   cookies: {
     consent:
       'We use cookies to analyze traffic and improve your user experience.',

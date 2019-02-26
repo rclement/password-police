@@ -2,9 +2,17 @@ import path from 'path'
 import fs from 'fs'
 import glob from 'glob'
 import yaml from 'js-yaml'
+import { validate, getValidationError } from './validation'
 
 function loadYamlFile(filepath) {
-  return yaml.safeLoad(fs.readFileSync(filepath, 'utf-8'))
+  const data = yaml.safeLoad(fs.readFileSync(filepath, 'utf-8'))
+  const valid = validate(data)
+  if (!valid) {
+    throw new Error(
+      `Invalid YAML file ${filepath}: ${getValidationError(validate)}`
+    )
+  }
+  return data
 }
 
 function findContent(basepath) {

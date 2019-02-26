@@ -26,6 +26,7 @@
     "@nuxtjs/pwa": "^2.6.0",
     "@nuxtjs/sentry": "^2.3.1",
     "@nuxtjs/sitemap": "^0.2.0",
+    "ajv": "^6.9.2",
     "cross-env": "^5.2.0",
     "generate-password": "^1.4.1",
     "js-yaml": "^3.12.2",

@@ -5,7 +5,9 @@ export default {
   },
 
   categories: {
-    title: 'Catégories'
+    title: 'Catégories',
+    banking: 'Banque',
+    government: 'Gouvernement'
   },
 
   policies: {

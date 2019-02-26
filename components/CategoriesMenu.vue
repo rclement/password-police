@@ -6,14 +6,14 @@
 
     <ul class="menu-list">
       <li
-        v-for="(category, key) in categories"
-        :key="key"
+        v-for="category in categories"
+        :key="category"
       >
         <a
-          :class="{ 'is-active': selectedCategory === key }"
-          @click="selectCategory(key)"
+          :class="{ 'is-active': selectedCategory === category }"
+          @click="selectCategory(category)"
         >
-          {{ category.name }}
+          {{ $t(`categories.${category}`) }}
         </a>
       </li>
     </ul>
@@ -29,9 +29,9 @@ export default {
     },
 
     categories: {
-      type: Object,
+      type: Array,
       default() {
-        return {}
+        return []
       }
     }
   },

@@ -18,7 +18,7 @@
           <div class="column is-2">
             <categories-menu
               v-model="selectedCategory"
-              :categories="categories"
+              :categories="categoryNames"
             />
           </div>
 
@@ -51,16 +51,17 @@ export default {
   },
 
   computed: {
+    categoryNames() {
+      return Object.keys(this.categories)
+    },
+
     filteredWebsites() {
       let categories = this.categories
 
       if (this.selectedCategory !== '') {
-        categories = Object.entries(this.categories)
-          .filter(([key, item]) => key === this.selectedCategory)
-          .reduce((obj, [key, item]) => {
-            obj[key] = item
-            return obj
-          }, {})
+        categories = {
+          [this.selectedCategory]: this.categories[this.selectedCategory]
+        }
       }
 
       return Object.entries(categories).reduce((obj, [key, item]) => {
@@ -73,7 +74,6 @@ export default {
   asyncData() {
     let categories = {
       banking: {
-        name: 'Banking',
         websites: [
           {
             id: 'credit-agricole',
@@ -93,7 +93,6 @@ export default {
         ]
       },
       government: {
-        name: 'Government',
         websites: [
           {
             id: 'autoentrepreneur-urssaf',

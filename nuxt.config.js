@@ -11,6 +11,9 @@ if (development) {
 }
 
 const appName = pkg.name
+const appTitle = 'Password Police'
+const appAuthor = pkg.author
+const appDescription = pkg.description
 const appVersion = pkg.version
 
 const baseUrl = process.env.BASE_URL || undefined
@@ -33,16 +36,7 @@ export default {
     STATIC_PREFIX: staticPrefix
   },
 
-  head: {
-    title: appName,
-    meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: pkg.description }
-    ]
-  },
-
-  loading: { color: '#fff' },
+  loading: { color: '#000000' },
 
   css: [
     '@fortawesome/fontawesome-free/css/all.css',
@@ -69,7 +63,6 @@ export default {
     [
       'nuxt-i18n',
       {
-        baseUrl: baseUrl,
         locales: locales.locales,
         defaultLocale: locales.defaultLocale,
         strategy: 'prefix_except_default',
@@ -124,8 +117,18 @@ export default {
   },
 
   meta: {
-    ogSiteName: appName,
+    name: appTitle,
+    author: appAuthor,
+    description: appDescription,
+    lang: locales.defaultLocale,
     ogHost: baseUrl
+  },
+
+  manifest: {
+    name: appTitle,
+    short_name: appName,
+    description: appDescription,
+    lang: locales.defaultLocale
   },
 
   workbox: {

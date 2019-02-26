@@ -54,7 +54,6 @@ export default {
   plugins: [{ src: '~/plugins/dnt', mode: 'client' }],
 
   modules: [
-    'nuxt-webfontloader',
     'nuxt-buefy',
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
@@ -94,12 +93,6 @@ export default {
     ...(googleAnalyticsId ? ['@nuxtjs/google-analytics'] : []),
     ...(sentryDsn ? ['@nuxtjs/sentry'] : [])
   ],
-
-  webfontloader: {
-    google: {
-      families: ['Quicksand:300,400']
-    }
-  },
 
   buefy: {
     css: true,

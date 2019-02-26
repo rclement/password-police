@@ -152,7 +152,7 @@ export default {
     exclude: []
   },
 
-  'nuxt-robots-module': [
+  robots: [
     {
       UserAgent: '*',
       Allow: '/',

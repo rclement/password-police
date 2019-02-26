@@ -1,0 +1,11 @@
+name: Auto-entrepreneur URSSAF
+url: https://autoentrepreneur.urssaf.fr
+img: /img/government/autoentrepreneur-urssaf.png
+note: Welcome to 1999!
+policies:
+  minlength: 1
+  maxlength: 8
+  uppercase: true
+  lowercase: true
+  numbers: true
+  symbols: false

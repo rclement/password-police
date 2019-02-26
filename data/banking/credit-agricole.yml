@@ -1,0 +1,11 @@
+name: Credit Agricole
+url: https://www.credit-agricole.fr
+img: /img/banking/credit-agricole.png
+note: Numeric pad only, no user input
+policies:
+  minlength: 6
+  maxlength: 6
+  uppercase: false
+  lowercase: false
+  numbers: true
+  symbols: false

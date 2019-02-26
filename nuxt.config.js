@@ -1,5 +1,6 @@
 import pkg from './package'
 import locales from './locales'
+import hooks from './hooks'
 
 const environment = process.env.NODE_ENV
 const development = environment === 'development'
@@ -54,11 +55,14 @@ export default {
     middleware: ['google-analytics-consent', 'matomo-consent']
   },
 
+  serverMiddleware: [{ path: '/data', handler: '~/server/data.js' }],
+
   plugins: [{ src: '~/plugins/dnt', mode: 'client' }],
 
   modules: [
     'nuxt-webfontloader',
     'nuxt-buefy',
+    '@nuxtjs/axios',
     '@nuxtjs/pwa',
     '@nuxtjs/sitemap',
     'nuxt-robots-module',
@@ -108,6 +112,10 @@ export default {
     css: true,
     materialDesignIcons: false,
     defaultIconPack: 'fas'
+  },
+
+  axios: {
+    browserBaseURL: '/'
   },
 
   icon: {
@@ -196,5 +204,7 @@ export default {
         })
       }
     }
-  }
+  },
+
+  hooks: hooks(this)
 }

@@ -36,7 +36,6 @@
 <script>
 import CategoriesMenu from '~/components/CategoriesMenu'
 import WebsitesTable from '~/components/WebsitesTable'
-import { websiteScore } from '~/utils'
 
 export default {
   components: {
@@ -65,67 +64,15 @@ export default {
       }
 
       return Object.entries(categories).reduce((obj, [key, item]) => {
-        obj.push(...item.websites)
+        const websites = Object.entries(item).map(([id, w]) => w)
+        obj.push(...websites)
         return obj
       }, [])
     }
   },
 
-  asyncData() {
-    let categories = {
-      banking: {
-        websites: [
-          {
-            id: 'credit-agricole',
-            name: 'Credit Agricole',
-            url: 'https://www.credit-agricole.fr',
-            img: '/img/banking/credit-agricole.png',
-            note: 'Numeric pad only, no user input',
-            policies: {
-              minlength: 6,
-              maxlength: 6,
-              uppercase: false,
-              lowercase: false,
-              numbers: true,
-              symbols: false
-            }
-          }
-        ]
-      },
-      government: {
-        websites: [
-          {
-            id: 'autoentrepreneur-urssaf',
-            name: 'Auto-entrepreneur URSSAF',
-            url: 'https://autoentrepreneur.urssaf.fr',
-            img: '/img/government/autoentrepreneur-urssaf.png',
-            note: 'Welcome to 1999!',
-            policies: {
-              minlength: 1,
-              maxlength: 8,
-              uppercase: true,
-              lowercase: true,
-              numbers: true,
-              symbols: false
-            }
-          }
-        ]
-      }
-    }
-
-    categories = Object.entries(categories).reduce((cats, [cKey, cItem]) => {
-      cItem.websites = cItem.websites.map(w => {
-        w.score = websiteScore(w.policies)
-        return w
-      })
-
-      cats[cKey] = cItem
-      return cats
-    }, {})
-
-    return {
-      categories: categories
-    }
+  async asyncData({ $axios }) {
+    return await $axios.$get('/data/')
   }
 }
 </script>

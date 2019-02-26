@@ -1,6 +1,8 @@
-# password-police
+# Password Police
 
 > Password policies list for online services
+
+[![Build Status](https://travis-ci.org/rclement/password-police.svg?branch=master)](https://travis-ci.org/rclement/password-police)
 
 ## Build Setup
 

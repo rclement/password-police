@@ -1,4 +1,5 @@
 import pkg from './package'
+import locales from './locales'
 
 const environment = process.env.NODE_ENV
 const development = environment === 'development'
@@ -60,6 +61,23 @@ export default {
     '@nuxtjs/pwa',
     '@nuxtjs/sitemap',
     'nuxt-robots-module',
+    [
+      'nuxt-i18n',
+      {
+        baseUrl: baseUrl,
+        locales: locales.locales,
+        defaultLocale: locales.defaultLocale,
+        strategy: 'prefix_except_default',
+        detectBrowserLanguage: {
+          useCookie: true,
+          cookieKey: 'i18n_redirected'
+        },
+        vueI18n: {
+          fallbackLocale: locales.defaultLocale,
+          messages: locales.messages
+        }
+      }
+    ],
     ...(matomoUrl && matomoSiteId
       ? [
           [

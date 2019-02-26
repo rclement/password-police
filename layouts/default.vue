@@ -1,8 +1,23 @@
 <template>
   <div class="layout">
-    <nuxt />
+    <nuxt class="main" />
+
+    <footer class="footer">
+      <credits />
+    </footer>
   </div>
 </template>
+
+<script>
+import Credits from '~/components/Credits'
+
+export default {
+  components: {
+    Credits
+  }
+}
+</script>
+
 
 <style>
 html {
@@ -10,5 +25,15 @@ html {
   -webkit-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
+}
+
+.layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main {
+  flex: 1;
 }
 </style>

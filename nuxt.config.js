@@ -50,10 +50,11 @@ export default {
   ],
 
   router: {
-    base: `${staticPrefix}/`
+    base: `${staticPrefix}/`,
+    middleware: ['google-analytics-consent', 'matomo-consent']
   },
 
-  plugins: [],
+  plugins: [{ src: '~/plugins/dnt', mode: 'client' }],
 
   modules: [
     'nuxt-webfontloader',

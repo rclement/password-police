@@ -1,3 +1,4 @@
+import common from './common'
 import en from './en'
 import fr from './fr'
 
@@ -17,8 +18,14 @@ const locales = [
 const defaultLocale = locales[0].code
 
 const messages = {
-  en: en,
-  fr: fr
+  en: {
+    common: common,
+    ...en
+  },
+  fr: {
+    common: common,
+    ...fr
+  }
 }
 
 export default {

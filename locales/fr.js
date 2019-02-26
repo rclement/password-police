@@ -5,6 +5,9 @@ export default {
       start: '2019',
       end: 'present',
       author: 'Romain Clement'
+    },
+    cookies: {
+      update: 'Mettre à jour la politique des cookies'
     }
   },
   cookies: {

@@ -1,5 +1,9 @@
 <template>
   <div class="layout">
+    <header>
+      <heading />
+    </header>
+
     <main class="main">
       <nuxt />
     </main>
@@ -11,10 +15,12 @@
 </template>
 
 <script>
+import Heading from '~/components/Heading'
 import Credits from '~/components/Credits'
 
 export default {
   components: {
+    Heading,
     Credits
   }
 }

@@ -11,6 +11,14 @@ export default {
     design: 'Design'
   },
 
+  search: {
+    placeholder: 'ex: Google'
+  },
+
+  table: {
+    empty: 'Aucun résultat'
+  },
+
   policies: {
     website: 'Site-web',
     minlength: 'Longueur minimum',

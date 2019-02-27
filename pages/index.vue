@@ -10,8 +10,12 @@
         </div>
 
         <div class="column">
+          <websites-search
+            v-model="searchName"
+          />
+
           <websites-table
-            :data="filteredWebsites"
+            v-model="filteredWebsites"
           />
         </div>
       </div>
@@ -21,17 +25,20 @@
 
 <script>
 import CategoriesMenu from '~/components/CategoriesMenu'
+import WebsitesSearch from '~/components/WebsitesSearch'
 import WebsitesTable from '~/components/WebsitesTable'
 
 export default {
   components: {
     CategoriesMenu,
+    WebsitesSearch,
     WebsitesTable
   },
 
   data() {
     return {
-      selectedCategory: ''
+      selectedCategory: '',
+      searchName: ''
     }
   },
 
@@ -40,7 +47,7 @@ export default {
       return Object.keys(this.categories)
     },
 
-    filteredWebsites() {
+    categoryWebsites() {
       let categories = this.categories
 
       if (this.selectedCategory !== '') {
@@ -54,6 +61,17 @@ export default {
         obj.push(...websites)
         return obj
       }, [])
+    },
+
+    filteredWebsites() {
+      const name = this.searchName
+      if (name.length === 0) {
+        return this.categoryWebsites
+      }
+
+      return this.categoryWebsites.filter(w => {
+        return w.name.toLowerCase().indexOf(name.toLowerCase()) >= 0
+      })
     }
   },
 

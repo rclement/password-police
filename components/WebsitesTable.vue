@@ -1,6 +1,6 @@
 <template>
   <b-table
-    :data="data"
+    :data="value"
     default-sort="name"
     default-sort-direction="asc"
   >
@@ -101,6 +101,21 @@
         {{ props.row.score }}
       </b-table-column>
     </template>
+
+    <template slot="empty">
+      <section class="section">
+        <div class="content has-text-grey has-text-centered">
+          <p>
+            <b-icon
+              icon="sad-tear"
+              icon-pack="fas"
+              size="is-large"
+            />
+          </p>
+          <p>{{ $t('table.empty') }}</p>
+        </div>
+      </section>
+    </template>
   </b-table>
 </template>
 
@@ -113,7 +128,7 @@ export default {
   },
 
   props: {
-    data: {
+    value: {
       type: Array,
       default() {
         return []

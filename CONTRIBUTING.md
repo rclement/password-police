@@ -11,7 +11,7 @@ through [YAML](https://yaml.org) files.
 3. **HTTPS links**: All sites that support HTTPS should also be linked with an
    HTTPS address.
 4. **Don't break the build**: We have a simple continuous integration system
-   setup with [Travis][https://travis-ci.org/rclement/password-police].
+   setup with [Travis](https://travis-ci.org/rclement/password-police).
    If your pull request doesn't pass, it won't be merged. Travis will only
    check your changes after you submit a pull request.
    If you want to test locally, instructions are listed below. Keep reading!

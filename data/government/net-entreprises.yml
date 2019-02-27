@@ -1,0 +1,11 @@
+name: Net-Entreprises
+url: https://www.net-entreprises.fr/
+img: /img/government/net-entreprises.svg
+note: 6 letters and 2 numbers min
+policies:
+  minlength: 8
+  maxlength: 20
+  uppercase: true
+  lowercase: true
+  numbers: true
+  symbols: true

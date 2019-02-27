@@ -75,8 +75,8 @@ export default {
     }
   },
 
-  async asyncData({ $axios }) {
-    return await $axios.$get('/data/')
+  async asyncData({ store }) {
+    return store.state.data
   }
 }
 </script>

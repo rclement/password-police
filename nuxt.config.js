@@ -174,6 +174,10 @@ export default {
       }
     : {}),
 
+  generate: {
+    fallback: true
+  },
+
   build: {
     extend(config, ctx) {
       // Run ESLint on save

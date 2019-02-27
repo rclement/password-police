@@ -31,7 +31,6 @@
           <div class="column is-2">
             <b-tooltip
               :label="props.row.note"
-              position="is-right"
               type="is-warning"
             >
               <b-icon
@@ -46,6 +45,7 @@
 
       <b-table-column
         :centered="true"
+        :numeric="true"
         :label="$t('policies.minlength')"
         field="policies.minlength"
         sortable
@@ -55,6 +55,7 @@
 
       <b-table-column
         :centered="true"
+        :numeric="true"
         :label="$t('policies.maxlength')"
         field="policies.maxlength"
         sortable
@@ -92,6 +93,7 @@
 
       <b-table-column
         :centered="true"
+        :numeric="true"
         :label="$t('policies.score')"
         field="score"
         sortable

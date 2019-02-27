@@ -55,11 +55,7 @@ export default {
   plugins: [{ src: '~/plugins/dnt', mode: 'client' }],
 
   modules: [
-    'nuxt-buefy',
     '@nuxtjs/axios',
-    '@nuxtjs/pwa',
-    '@nuxtjs/sitemap',
-    'nuxt-robots-module',
     [
       'nuxt-i18n',
       {
@@ -76,6 +72,10 @@ export default {
         }
       }
     ],
+    'nuxt-buefy',
+    '@nuxtjs/pwa',
+    '@nuxtjs/sitemap',
+    'nuxt-robots-module',
     ...(matomoUrl && matomoSiteId
       ? [
           [
@@ -123,21 +123,6 @@ export default {
     short_name: appName,
     description: appDescription,
     lang: locales.defaultLocale
-  },
-
-  workbox: {
-    runtimeCaching: [
-      {
-        urlPattern: 'https://fonts.(?:googleapis|gstatic).com/(.*)',
-        strategyOptions: {
-          cacheName: 'google-fonts',
-          cacheExpiration: {
-            maxEntries: 30,
-            maxAgeSeconds: 300
-          }
-        }
-      }
-    ]
   },
 
   sitemap: {

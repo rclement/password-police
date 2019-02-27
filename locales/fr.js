@@ -1,7 +1,10 @@
 export default {
   home: {
     title: '🔐 Password Police 🚨',
-    subtitle: 'Liste des politiques de mot de passe pour les services en ligne'
+    subtitle: 'Liste des {passwordpolicies} pour les services en ligne',
+    contribute:
+      'Ajoutez votre site-web préféré à cette base de données en soumettant une pull-request sur {github}',
+    passwordPolicies: 'politiques de mot de passe'
   },
 
   categories: {
@@ -31,15 +34,18 @@ export default {
   },
 
   credits: {
+    made: 'Fait-main par {author} et les {contributors}',
+    powered: 'Propulsé par {nuxt}, stylisé avec {bulma}',
+    licensed: 'Logiciel libre sous {license}',
+    license: 'licence MIT',
+    contributors: 'contributeurs',
     copyright: {
       text: 'Tous droits réservés',
       start: '2019',
       end: 'present',
       author: 'Romain Clement'
     },
-    cookies: {
-      update: 'Mettre à jour la politique des cookies'
-    },
+    cookies: 'Mettre à jour la politique des cookies',
     language: 'Langue'
   },
 

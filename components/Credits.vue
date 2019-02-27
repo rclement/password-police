@@ -1,11 +1,11 @@
 <template>
   <div class="credits">
-    <div class="container">
-      <nav class="level">
-        <div class="level-item has-text-centered">
+    <div class="container has-text-centered">
+      <nav class="columns is-vcentered">
+        <div class="column">
           <div>
             <a
-              v-for="link in links"
+              v-for="link in socialLinks"
               :key="link.name"
               :href="link.url"
               :title="link.name"
@@ -16,30 +16,98 @@
                 :icon="link.icon.name"
                 size="is-medium"
               />
+              <br>
+
+              <p class="heading">{{ link.name }}</p>
             </a>
           </div>
         </div>
 
-        <div class="level-item has-text-centered">
-          <p>
+        <div class="column is-8">
+          <i18n
+            path="credits.made"
+            tag="p"
+            class="heading"
+          >
+            <a
+              :href="authorLink.url"
+              :title="authorLink.name"
+              :alt="authorLink.name"
+              place="author"
+            >
+              {{ authorLink.name }}
+            </a>
+
+            <a
+              :href="`${githubLink.url}/graphs/contributors`"
+              :title="githubLink.name"
+              :alt="githubLink.name"
+              place="contributors"
+            >
+              {{ $t('credits.contributors') }}
+            </a>
+          </i18n>
+
+          <i18n
+            path="credits.powered"
+            tag="p"
+            class="heading"
+          >
+            <a
+              :href="nuxtLink.url"
+              :title="nuxtLink.name"
+              :alt="nuxtLink.name"
+              place="nuxt"
+            >
+              {{ nuxtLink.name }}
+            </a>
+
+            <a
+              :href="bulmaLink.url"
+              :title="bulmaLink.name"
+              :alt="bulmaLink.name"
+              place="bulma"
+            >
+              {{ bulmaLink.name }}
+            </a>
+          </i18n>
+
+          <i18n
+            path="credits.licensed"
+            tag="p"
+            class="heading"
+          >
+            <a
+              :href="`${githubLink.url}/blob/master/LICENSE`"
+              :title="githubLink.name"
+              :alt="githubLink.name"
+              place="license"
+            >
+              {{ $t('credits.license') }}
+            </a>
+          </i18n>
+
+          <br>
+
+          <p class="heading">
             {{ $t('credits.copyright.text') }} © {{ $t('credits.copyright.start') }} - {{ $t('credits.copyright.end') }}, {{ $t('credits.copyright.author') }}
+          </p>
 
-            <br>
-
+          <p class="heading">
             <a @click="updateCookiePrefs">
-              {{ $t('credits.cookies.update') }}
+              {{ $t('credits.cookies') }}
             </a>
           </p>
         </div>
 
-        <div class="level-item has-text-centered">
+        <div class="column">
           <div class="navbar-item has-dropdown is-hoverable">
             <a class="navbar-link">
               <b-icon
                 icon="globe"
                 pack="fas"
                 size="is-small"
-                style="padding: 0rem 1rem 0rem 0rem;"
+                style="padding-right: 1.5rem;"
               />
 
               {{ $t('credits.language') }}
@@ -77,13 +145,26 @@ export default {
 
   data() {
     return {
-      cookieConsentId: 'cookie-consent'
+      cookieConsentId: 'cookie-consent',
+      authorLink: this.$t('common.links.author'),
+      githubLink: this.$t('common.links.github'),
+      nuxtLink: this.$t('common.links.nuxt'),
+      bulmaLink: this.$t('common.links.bulma')
     }
   },
 
   computed: {
     links() {
       return this.$t('common.links')
+    },
+
+    socialLinks() {
+      return Object.entries(this.links)
+        .filter(([id, link]) => link.category === 'social')
+        .reduce((obj, [key, item]) => {
+          obj[key] = item
+          return obj
+        }, {})
     }
   },
 

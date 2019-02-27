@@ -1,7 +1,10 @@
 export default {
   home: {
     title: '🔐 Password Police 🚨',
-    subtitle: 'Password policies list for online services'
+    subtitle: '{passwordpolicies} list for online services',
+    contribute:
+      'Add your favorite website to this database by submitting a pull request on {github}',
+    passwordPolicies: 'Password policies'
   },
 
   categories: {
@@ -31,15 +34,18 @@ export default {
   },
 
   credits: {
+    made: 'Hand-crafted by {author} and the {contributors}',
+    powered: 'Powered by {nuxt}, styled with {bulma}',
+    licensed: 'Open-source software under {license}',
+    license: 'MIT license',
+    contributors: 'contributors',
     copyright: {
       text: 'Copyright',
       start: '2019',
       end: 'present',
       author: 'Romain Clement'
     },
-    cookies: {
-      update: 'Update cookies policy'
-    },
+    cookies: 'Update cookies policy',
     language: 'Language'
   },
 

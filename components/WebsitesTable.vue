@@ -30,6 +30,7 @@
 
           <div class="column is-2">
             <b-tooltip
+              v-if="props.row.note"
               :label="props.row.note"
               type="is-warning"
             >

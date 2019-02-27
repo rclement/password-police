@@ -7,7 +7,9 @@ const schema = {
     name: { type: 'string' },
     url: { type: 'string', format: 'uri' },
     img: { type: 'string', format: 'uri-reference' },
-    note: { type: 'string' },
+    note: {
+      oneOf: [{ type: 'string' }, { type: 'null' }]
+    },
     policies: {
       type: 'object',
       properties: {

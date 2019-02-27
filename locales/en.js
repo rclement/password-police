@@ -1,6 +1,6 @@
 export default {
   home: {
-    title: 'Password Police',
+    title: '🔐 Password Police 🚨',
     subtitle: 'Password policies list for online services'
   },
 
@@ -39,7 +39,8 @@ export default {
     },
     cookies: {
       update: 'Update cookies policy'
-    }
+    },
+    language: 'Language'
   },
 
   cookies: {

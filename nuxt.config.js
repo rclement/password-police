@@ -46,6 +46,7 @@ export default {
 
   router: {
     base: `${staticPrefix}/`,
+    linkExactActiveClass: 'is-active',
     middleware: ['google-analytics-consent', 'matomo-consent']
   },
 

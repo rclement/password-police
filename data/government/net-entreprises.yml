@@ -1,7 +1,7 @@
 name: Net-Entreprises
 url: https://www.net-entreprises.fr/
 img: /img/government/net-entreprises.svg
-note: 
+note: '6 lettres et 2 chiffres minimum'
 policies:
   minlength: 8
   maxlength: 20

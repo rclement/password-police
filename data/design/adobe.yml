@@ -1,0 +1,11 @@
+name: Adobe
+url: https://adobe.com
+img: /img/design/adobe.svg
+note: Stop selling personal data !
+policies:
+  minlength: 8
+  maxlength: 100
+  uppercase: true
+  lowercase: true
+  numbers: true
+  symbols: true

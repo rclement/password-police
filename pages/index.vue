@@ -1,24 +1,22 @@
 <template>
-  <div class="index">
-    <section class="section">
-      <div class="container">
-        <div class="columns">
-          <div class="column is-2">
-            <categories-menu
-              v-model="selectedCategory"
-              :categories="categoryNames"
-            />
-          </div>
+  <section class="section">
+    <div class="container">
+      <div class="columns">
+        <div class="column is-2">
+          <categories-menu
+            v-model="selectedCategory"
+            :categories="categoryNames"
+          />
+        </div>
 
-          <div class="column">
-            <websites-table
-              :data="filteredWebsites"
-            />
-          </div>
+        <div class="column">
+          <websites-table
+            :data="filteredWebsites"
+          />
         </div>
       </div>
-    </section>
-  </div>
+    </div>
+  </section>
 </template>
 
 <script>

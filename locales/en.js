@@ -39,5 +39,16 @@ export default {
     accept: 'Accept',
     decline: 'Decline',
     learnMore: '🍪 Learn more'
+  },
+
+  errors: {
+    codes: [
+      {
+        code: 404,
+        title: 'Page not found',
+        message: 'It seems you are lost!'
+      }
+    ],
+    backToHome: 'Back to home'
   }
 }

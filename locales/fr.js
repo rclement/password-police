@@ -38,5 +38,16 @@ export default {
     accept: 'Accepter',
     decline: 'Refuser',
     learnMore: '🍪 En savoir plus'
+  },
+
+  errors: {
+    codes: [
+      {
+        code: 404,
+        title: 'Page introuvable',
+        message: 'Il semblerait que vous soyez perdu !'
+      }
+    ],
+    backToHome: `Retour à l'accueil`
   }
 }

@@ -31,11 +31,6 @@
           place="github"
         >
           {{ githubLink.name }}
-          <b-icon
-            :pack="githubLink.icon.pack"
-            :icon="githubLink.icon.name"
-            size="is-small"
-          />
         </a>
       </i18n>
     </div>

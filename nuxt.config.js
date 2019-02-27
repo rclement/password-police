@@ -39,8 +39,7 @@ export default {
   loading: { color: '#000000' },
 
   css: [
-    '@fortawesome/fontawesome-free/css/all.css',
-    'vue-cookie-accept-decline/dist/vue-cookie-accept-decline.css',
+    '@fortawesome/fontawesome-svg-core/styles.css',
     '~/assets/scss/main.scss'
   ],
 
@@ -52,7 +51,10 @@ export default {
 
   serverMiddleware: [{ path: '/data', handler: '~/server/data.js' }],
 
-  plugins: [{ src: '~/plugins/dnt', mode: 'client' }],
+  plugins: [
+    '~/plugins/fontawesome.js',
+    { src: '~/plugins/dnt', mode: 'client' }
+  ],
 
   modules: [
     '@nuxtjs/axios',
@@ -95,14 +97,14 @@ export default {
     ...(sentryDsn ? ['@nuxtjs/sentry'] : [])
   ],
 
+  axios: {
+    browserBaseURL: '/'
+  },
+
   buefy: {
     css: true,
     materialDesignIcons: false,
-    defaultIconPack: 'fas'
-  },
-
-  axios: {
-    browserBaseURL: '/'
+    defaultIconComponent: 'font-awesome-icon'
   },
 
   icon: {

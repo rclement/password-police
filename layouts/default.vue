@@ -1,6 +1,8 @@
 <template>
   <div class="layout">
-    <nuxt class="main" />
+    <main class="main">
+      <nuxt />
+    </main>
 
     <footer class="footer">
       <credits />

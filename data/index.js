@@ -2,7 +2,10 @@ import path from 'path'
 import fs from 'fs'
 import glob from 'glob'
 import yaml from 'js-yaml'
+import consola from 'consola'
 import { validate, getValidationError } from './validation'
+
+const logger = consola.withTag('data')
 
 function loadYamlFile(filepath) {
   const data = yaml.safeLoad(fs.readFileSync(filepath, 'utf-8'))
@@ -43,7 +46,17 @@ function findContent(basepath) {
 
 function findCategories() {
   const categoriesPath = path.resolve(__dirname, '.')
-  return findContent(categoriesPath)
+  logger.info(`Finding categories in ${categoriesPath}`)
+
+  const categories = findContent(categoriesPath)
+  const numCategories = Object.entries(categories).length
+  const numWebsites = Object.entries(categories).reduce(
+    (sum, [k, c]) => sum + Object.entries(c).length,
+    0
+  )
+
+  logger.success(`${numWebsites} websites found in ${numCategories} categories`)
+  return categories
 }
 
 export default {

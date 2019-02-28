@@ -1,5 +1,6 @@
 name: Auto-entrepreneur URSSAF
-url: https://autoentrepreneur.urssaf.fr
+urls:
+  homepage: https://autoentrepreneur.urssaf.fr
 img: /img/government/autoentrepreneur-urssaf.png
 note:
 policies:

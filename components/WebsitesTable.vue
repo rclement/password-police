@@ -24,7 +24,7 @@
           </div>
 
           <div class="column">
-            <a :href="props.row.url">
+            <a :href="props.row.urls.homepage">
               {{ props.row.name }}
             </a>
           </div>

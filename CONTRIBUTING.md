@@ -28,9 +28,12 @@ Adding a new website is composed of 3 simple steps:
 
   ``` yaml
   name: My Online Service
-  url: https://my-online-service.com
+  urls:
+    homepage: https://my-online-service.com
+    documentation: (optional) https://my-online-service.com/password-rules
+    change: (optional) https://my-online-service.com/.well-known/change-password
   img: /img/my-category/my-online-service.png
-  note: Specific instructions
+  note: (optional) Specific instructions
   policies:
     minlength: 8
     maxlength: 32

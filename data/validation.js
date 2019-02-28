@@ -5,7 +5,19 @@ const ajv = new Ajv({ allErrors: true })
 const schema = {
   properties: {
     name: { type: 'string' },
-    url: { type: 'string', format: 'uri' },
+    urls: {
+      type: 'object',
+      properties: {
+        homepage: { type: 'string', format: 'uri' },
+        documentation: {
+          oneOf: [{ type: 'string', format: 'uri' }, { type: 'null' }]
+        },
+        change: {
+          oneOf: [{ type: 'string', format: 'uri' }, { type: 'null' }]
+        }
+      },
+      required: ['homepage']
+    },
     img: { type: 'string', format: 'uri-reference' },
     note: {
       oneOf: [{ type: 'string' }, { type: 'null' }]
@@ -30,7 +42,7 @@ const schema = {
       ]
     }
   },
-  required: ['name', 'url', 'img', 'policies']
+  required: ['name', 'urls', 'img', 'policies']
 }
 
 export const validate = ajv.compile(schema)

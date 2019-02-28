@@ -1,5 +1,6 @@
 name: Credit Agricole
-url: https://www.credit-agricole.fr
+urls:
+  homepage: https://www.credit-agricole.fr
 img: /img/banking/credit-agricole.png
 note: Numeric pad only, no user input
 policies:

@@ -1,5 +1,7 @@
 name: Net-Entreprises
-url: https://www.net-entreprises.fr/
+urls:
+  homepage: https://www.net-entreprises.fr
+  change: https://portail.net-entreprises.fr/auth/start
 img: /img/government/net-entreprises.svg
 note: 6 letters and 2 numbers min
 policies:

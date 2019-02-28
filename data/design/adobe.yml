@@ -1,5 +1,7 @@
 name: Adobe
-url: https://adobe.com
+urls:
+  homepage: https://adobe.com
+  documentation: https://helpx.adobe.com/manage-account/using/change-or-reset-password.html
 img: /img/design/adobe.svg
 note: Stop selling personal data !
 policies:

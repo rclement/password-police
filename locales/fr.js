@@ -12,6 +12,7 @@ export default {
     banking: 'Banque',
     design: 'Design',
     government: 'Gouvernement',
+    technology: 'Technologie',
     web: 'Web'
   },
 

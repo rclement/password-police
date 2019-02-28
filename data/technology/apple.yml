@@ -1,0 +1,13 @@
+name: Apple
+urls:
+  homepage: https://appleid.apple.com
+  documentation: https://support.apple.com/en-us/HT201303
+  change: https://iforgot.apple.com/password/verify/appleid
+img: /img/technology/apple.svg
+policies:
+  minlength: 8
+  maxlength: 32
+  uppercase: true
+  lowercase: true
+  numbers: true
+  symbols: true

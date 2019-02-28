@@ -33,6 +33,7 @@ export default {
   mode: 'universal',
 
   env: {
+    APP_VERSION: appVersion,
     STATIC_PREFIX: staticPrefix
   },
 

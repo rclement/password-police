@@ -87,6 +87,10 @@
             </a>
           </i18n>
 
+          <p class="heading">
+            v{{ appVersion }}
+          </p>
+
           <br>
 
           <p class="heading">
@@ -145,6 +149,7 @@ export default {
 
   data() {
     return {
+      appVersion: process.env.APP_VERSION,
       cookieConsentId: 'cookie-consent',
       authorLink: this.$t('common.links.author'),
       githubLink: this.$t('common.links.github'),

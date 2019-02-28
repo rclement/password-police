@@ -32,7 +32,7 @@ export default {
     lowercase: 'Lowercase [a-z]',
     numbers: 'Numbers [0-9]',
     symbols: 'Symbols [!@#$%^&*]',
-    score: 'Score [1-5]'
+    score: 'Score [0-4]'
   },
 
   credits: {

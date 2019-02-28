@@ -3,6 +3,7 @@
     :data="value"
     default-sort="name"
     default-sort-direction="asc"
+    icon-pack="fas"
   >
     <template v-slot="props">
       <b-table-column

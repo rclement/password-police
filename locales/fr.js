@@ -10,8 +10,9 @@ export default {
   categories: {
     title: 'Catégories',
     banking: 'Banque',
+    design: 'Design',
     government: 'Gouvernement',
-    design: 'Design'
+    web: 'Web'
   },
 
   search: {

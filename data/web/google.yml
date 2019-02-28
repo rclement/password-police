@@ -1,0 +1,12 @@
+name: Google
+urls:
+  homepage: https://google.com
+  documentation: https://support.google.com/accounts/answer/32040
+img: /img/web/google.svg
+policies:
+  minlength: 8
+  maxlength: 100
+  uppercase: true
+  lowercase: true
+  numbers: true
+  symbols: true

@@ -37,7 +37,7 @@ export default {
     STATIC_PREFIX: staticPrefix
   },
 
-  loading: { color: '#000000' },
+  loading: { color: '#3a3935' },
 
   css: [
     '@fortawesome/fontawesome-svg-core/styles.css',
@@ -125,7 +125,9 @@ export default {
     name: appTitle,
     short_name: appName,
     description: appDescription,
-    lang: locales.defaultLocale
+    lang: locales.defaultLocale,
+    background_color: '#ffffff',
+    theme_color: '3a3935'
   },
 
   sitemap: {

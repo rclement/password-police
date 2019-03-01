@@ -1,6 +1,13 @@
 <template>
   <section class="section">
     <div class="container has-text-centered">
+      <figure class="image container is-128x128">
+        <img
+          src="~assets/svg/logo.svg"
+          title="Logo"
+        >
+      </figure>
+
       <p class="title">
         {{ $t('home.title') }}
       </p>

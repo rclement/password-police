@@ -1,3 +1,7 @@
+<p align="center">
+  <img align="center" style="width:320px" src="assets/svg/logo.svg"/>
+</p>
+
 # Password Police 🔐🚨
 
 [![Build Status](https://travis-ci.org/rclement/password-police.svg?branch=master)](https://travis-ci.org/rclement/password-police)

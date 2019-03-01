@@ -1,6 +1,6 @@
 export default {
   home: {
-    title: '🔐 Password Police 🚨',
+    title: 'Password Police',
     subtitle: '{passwordpolicies} list for online services',
     contribute:
       'Add your favorite website to this database by submitting a pull request on {github}',

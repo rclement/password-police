@@ -1,0 +1,12 @@
+name: Miles & More
+urls:
+  homepage: https://www.miles-and-more.com
+img: /img/travel/miles-and-more.jpg
+note: Stores your PIN in clear text
+policies:
+  minlength: 8
+  maxlength: 32
+  uppercase: true
+  lowercase: true
+  numbers: true
+  symbols: true

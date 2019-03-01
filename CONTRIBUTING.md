@@ -6,12 +6,13 @@ through [YAML](https://yaml.org) files.
 ## Guidelines
 
 1. **No duplicates**: Double-check the website is not already in the database
-2. **Use a nice icon**: The icon must have a resolution of 32x32. PNG and SVG are the
-   preferred format.
+2. **Use a nice icon**: `svg` and `png` are the preferred formats. If using `png`,
+   the icon must have a resolution of 64x64 so that it can be scaled to 32x32
+   and display properly on retina (2x) displays.
 3. **HTTPS links**: All sites that support HTTPS should also be linked with an
    HTTPS address.
-4. **Don't break the build**: We have a simple continuous integration system
-   setup with [Travis](https://travis-ci.org/rclement/password-police).
+4. **Don't break the build**: There is a continuous integration and deployment system
+   setup with [Travis-CI](https://travis-ci.org/rclement/password-police).
    If your pull request doesn't pass, it won't be merged. Travis will only
    check your changes after you submit a pull request.
    If you want to test locally, instructions are listed below. Keep reading!

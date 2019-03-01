@@ -1,5 +1,5 @@
 <p align="center">
-  <img align="center" style="width:320px" src="assets/svg/logo.svg"/>
+  <img align="center" width="256" height="256" src="assets/svg/logo.svg"/>
 </p>
 
 # Password Police 🔐🚨

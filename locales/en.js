@@ -13,6 +13,7 @@ export default {
     design: 'Design',
     government: 'Government',
     technology: 'Technology',
+    travel: 'Travel',
     web: 'Web'
   },
 

@@ -1,6 +1,9 @@
 <template>
   <b-table
     :data="value"
+    :striped="true"
+    :narrowed="true"
+    :mobile-cards="true"
     default-sort="name"
     default-sort-direction="asc"
     icon-pack="fas"
@@ -14,7 +17,7 @@
       >
         <div class="columns is-vcentered">
           <div class="column is-3">
-            <figure class="image is-32x32">
+            <figure class="image container is-32x32">
               <img
                 :src="`${staticPrefix}${props.row.img}`"
                 class="is-rounded is-bordered"

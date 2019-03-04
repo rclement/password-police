@@ -127,7 +127,7 @@ export default {
     description: appDescription,
     lang: locales.defaultLocale,
     background_color: '#ffffff',
-    theme_color: '3a3935'
+    theme_color: '#3a3935'
   },
 
   sitemap: {

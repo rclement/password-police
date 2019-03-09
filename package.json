@@ -13,7 +13,7 @@
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "lint:fix": "eslint --fix --ext .js,.vue --ignore-path .gitignore .",
     "test": "jest",
-    "precommit": "npm run lint && npm run test"
+    "precommit": "npm audit && npm run lint && npm run test"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.15",

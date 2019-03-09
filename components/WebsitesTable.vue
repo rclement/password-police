@@ -1,6 +1,8 @@
 <template>
   <b-table
     :data="value"
+    :paginated="true"
+    :per-page="10"
     :striped="true"
     :narrowed="true"
     :mobile-cards="true"

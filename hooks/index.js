@@ -1,8 +1,8 @@
 import express from 'express'
-import data from '../server/data'
+import dataMiddleware from '../server/data'
 
 const app = express()
-app.use('/data', data)
+app.use('/data', dataMiddleware)
 
 let server = null
 

@@ -4,17 +4,22 @@ import glob from 'glob'
 import yaml from 'js-yaml'
 import consola from 'consola'
 import { validate, getValidationError } from './validation'
+import { websiteScore } from './score'
 
-const logger = consola.withTag('data')
+const logger = consola.withTag('password-police:data')
 
 function loadYamlFile(filepath) {
   const data = yaml.safeLoad(fs.readFileSync(filepath, 'utf-8'))
   const valid = validate(data)
+
   if (!valid) {
     throw new Error(
       `Invalid YAML file ${filepath}: ${getValidationError(validate)}`
     )
   }
+
+  data.score = websiteScore(data.policies)
+
   return data
 }
 

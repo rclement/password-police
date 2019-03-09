@@ -113,7 +113,7 @@
           <p>
             <b-icon
               icon="sad-tear"
-              icon-pack="fas"
+              pack="fas"
               size="is-large"
             />
           </p>

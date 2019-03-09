@@ -2,10 +2,8 @@
   <section class="section">
     <div class="container has-text-centered">
       <b-icon
+        icon="sad-tear"
         pack="fas"
-        icon="exclamation-circle"
-        class="link-icon"
-        size="is-large"
       />
 
       <p class="title">

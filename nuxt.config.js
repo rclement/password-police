@@ -79,6 +79,7 @@ export default {
     '@nuxtjs/pwa',
     '@nuxtjs/sitemap',
     'nuxt-robots-module',
+    'nuxt-compress',
     ...(matomoUrl && matomoSiteId
       ? [
           [
@@ -146,6 +147,15 @@ export default {
       Sitemap: sitemapUrl
     }
   ],
+
+  'nuxt-compress': {
+    gzip: {
+      cache: true
+    },
+    brotli: {
+      threshold: 10240
+    }
+  },
 
   ...(googleAnalyticsId
     ? {

@@ -18,6 +18,7 @@ export default {
   },
 
   search: {
+    label: 'Search',
     placeholder: 'e.g. Google'
   },
 

@@ -1,5 +1,5 @@
 <template>
-  <b-field>
+  <b-field :label="$t('search.label')">
     <b-input
       v-model="name"
       :placeholder="$t('search.placeholder')"

@@ -18,7 +18,8 @@ export default {
   },
 
   search: {
-    placeholder: 'ex: Google'
+    label: 'Recherche',
+    placeholder: 'ex : Google'
   },
 
   table: {

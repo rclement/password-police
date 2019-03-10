@@ -41,8 +41,8 @@
               type="is-warning"
             >
               <b-icon
-                pack="fas"
                 icon="info-circle"
+                pack="fas"
                 type="is-warning"
               />
             </b-tooltip>

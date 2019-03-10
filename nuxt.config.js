@@ -104,8 +104,9 @@ export default {
   },
 
   buefy: {
-    css: true,
+    css: false,
     materialDesignIcons: false,
+    defaultIconPack: 'fas',
     defaultIconComponent: 'font-awesome-icon'
   },
 

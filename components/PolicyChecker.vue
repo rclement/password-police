@@ -1,8 +1,8 @@
 <template>
   <b-icon
-    pack="fas"
-    :icon="check ? 'check' : 'times'"
     :type="check ? 'is-success' : 'is-danger'"
+    :icon="check ? 'check' : 'times'"
+    pack="fas"
   />
 </template>
 

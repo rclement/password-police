@@ -12,8 +12,8 @@
               :alt="link.name"
             >
               <b-icon
-                :pack="link.icon.pack"
                 :icon="link.icon.name"
+                :pack="link.icon.pack"
                 size="is-medium"
               />
               <br>

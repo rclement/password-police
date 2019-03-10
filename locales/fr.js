@@ -11,6 +11,7 @@ export default {
     title: 'Catégories',
     banking: 'Banque',
     design: 'Design',
+    games: 'Jeux',
     government: 'Gouvernement',
     technology: 'Technologie',
     travel: 'Voyages',

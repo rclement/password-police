@@ -1,0 +1,13 @@
+name: Battle.net
+urls:
+  homepage: https://battle.net
+  change: https://us.battle.net/account/recovery/en-gb/identify-account.html?requestType=PASSWORD_RESET
+img: /img/games/blizzard.svg
+note: Also valid for BlizzardID
+policies:
+  minlength: 8
+  maxlength: 16
+  uppercase: true
+  lowercase: true
+  numbers: true
+  symbols: false

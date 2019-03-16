@@ -162,6 +162,7 @@ export default {
     ? {
         googleAnalytics: {
           id: googleAnalyticsId,
+          disabled: true,
           debug: {
             enabled: development,
             sendHitTask: production

@@ -18,6 +18,8 @@ script:
   - npm run lint
   - npm run test
   - npm run generate
+
+before_deploy:
   - curl -sSL https://frama.link/get-revelio | bash
   - revelio generate -p ./dist -u https://rclement.github.io/password-police/
   - cat ./dist/.well-known/revelio.json

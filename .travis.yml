@@ -20,7 +20,7 @@ script:
   - npm run generate
 
 before_deploy:
-  - curl -sSL https://frama.link/get-revelio | bash
+  - curl -sSL https://raw.githubusercontent.com/47ng/revelio/master/scripts/get.sh | bash
   - revelio generate -p ./dist -u https://rclement.github.io/password-police/
   - cat ./dist/.well-known/revelio.json
 

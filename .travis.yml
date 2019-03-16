@@ -1,10 +1,10 @@
 language: node_js
 node_js:
-  - "11"
+  - '11'
 
 cache:
   directories:
-    - "node_modules"
+    - 'node_modules'
 
 branches:
   only:
@@ -19,7 +19,8 @@ script:
   - npm run test
   - npm run generate
   - curl -sSL https://frama.link/get-revelio | bash
-  - revelio generate -p ./dist -u https://rclement.github.io/password-police/
+  - echo $PATH && ls -la . && ls -Rla .revelio
+  - .revelio/bin/revelio generate -p ./dist -u https://rclement.github.io/password-police/
   - cat ./dist/.well-known/revelio.json
 
 deploy:

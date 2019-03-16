@@ -1,14 +1,14 @@
 language: node_js
 node_js:
-  - "11"
+  - '11'
 
 cache:
   directories:
-    - "node_modules"
+    - 'node_modules'
 
 branches:
   only:
-  - master
+    - master
 
 install:
   - npm install
@@ -18,6 +18,11 @@ script:
   - npm run lint
   - npm run test
   - npm run generate
+
+before_deploy:
+  - curl -sSL https://raw.githubusercontent.com/47ng/revelio/master/scripts/get.sh | bash
+  - revelio generate -p ./dist -u https://rclement.github.io/password-police/
+  - cat ./dist/.well-known/revelio.json
 
 deploy:
   provider: pages

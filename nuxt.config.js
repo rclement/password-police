@@ -1,3 +1,4 @@
+import * as Sentry from '@sentry/browser'
 import pkg from './package'
 import locales from './locales'
 import hooks from './hooks'
@@ -137,7 +138,6 @@ export default {
     hostname: baseUrl,
     cacheTime: 1000 * 60 * 15,
     gzip: true,
-    generate: true,
     exclude: []
   },
 

@@ -30,7 +30,7 @@
     "cross-env": "^5.2.0",
     "generate-password": "^1.4.1",
     "js-yaml": "^3.13.1",
-    "nuxt": "^2.7.1",
+    "nuxt": "^2.16.3",
     "nuxt-buefy": "^0.3.7",
     "nuxt-fontawesome": "^0.4.0",
     "nuxt-i18n": "^5.12.4",
